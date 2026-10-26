@@ -34,7 +34,7 @@ CHECKLIST.md          the whole route on one page
    ```bash
    npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend"
    ```
-   It lands in `.claude/skills/` (Claude Code) or `.agents/skills/` (Codex). Alternatives: [Impeccable](https://github.com/pbakaus/impeccable), [Hallmark](https://github.com/nutlope/hallmark).
+   Full repo: https://github.com/Leonxlnx/taste-skill. It lands in `.claude/skills/` (Claude Code) or `.agents/skills/` (Codex). Alternatives: [Impeccable](https://github.com/pbakaus/impeccable), [Hallmark](https://github.com/nutlope/hallmark).
 6. **Build.** Paste `prompts/01-build.md`.
 7. **Browser loop.** Never accept round 1. Use `prompts/02-corrections.md` as patterns. Optional browser check: [Playwright MCP](https://github.com/microsoft/playwright-mcp)
    ```bash
@@ -46,6 +46,44 @@ CHECKLIST.md          the whole route on one page
    npx skills add heredotnow/skill --skill here-now -g
    ```
    Then tell your agent: "publish this folder to here.now". Without an account the link expires after 24 hours; a free account or the claim link keeps it.
+
+## Everything mentioned in the video
+
+### Design skills
+- **Taste Skill** (the one used in the video): https://github.com/Leonxlnx/taste-skill
+  ```bash
+  npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend"
+  ```
+  Claude Code plugin instead: `/plugin marketplace add Leonxlnx/taste-skill` then `/plugin install taste-skill@taste-skill`.
+  Codex plugin instead: `codex plugin marketplace add Leonxlnx/taste-skill` then `codex plugin add taste-skill@taste-skill` (start a new session afterwards).
+  A full build takes roughly 30-45 minutes and a few hundred thousand tokens (per its README). It checks your page at 3 widths.
+- **Impeccable**: https://github.com/pbakaus/impeccable
+  ```bash
+  npx impeccable install            # then /impeccable init in your agent
+  npx impeccable detect index.html  # lint any page, no AI needed
+  ```
+- **Hallmark**: https://github.com/nutlope/hallmark (checks your page at 8 widths, Node 18+)
+  ```bash
+  npx skills add nutlope/hallmark -g
+  ```
+
+### Shipping
+- **here.now skill**: https://github.com/heredotnow/skill · docs https://here.now/docs · pricing https://here.now/pricing.md
+  ```bash
+  npx skills add heredotnow/skill --skill here-now -g
+  ```
+
+### Browser checks
+- **Playwright MCP**: https://github.com/microsoft/playwright-mcp
+- **Playwright CLI** (more token-efficient, per the Playwright README): https://github.com/microsoft/playwright-cli
+
+### The skills installer
+- `npx skills`: https://github.com/vercel-labs/skills · browse skills at https://skills.sh
+
+### Agent docs (skills + instruction files)
+- Claude Code: https://code.claude.com/docs/en/skills · https://code.claude.com/docs/en/memory
+- Codex: https://developers.openai.com/codex/skills · https://developers.openai.com/codex/guides/agents-md
+- OpenCode: https://opencode.ai/docs/skills · https://opencode.ai/docs/rules
 
 ## Notes
 
