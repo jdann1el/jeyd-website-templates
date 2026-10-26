@@ -1,0 +1,5 @@
+- Read BRIEF.md, every image in refs/ and refs/NOTES.md before writing any code.
+- Use only the facts in BRIEF.md. No invented logos, testimonials, ratings or numbers.
+- Static HTML/CSS/JS, no frameworks, no build step.
+- Check the page in a real browser at desktop, tablet and phone widths.
+- Fix what breaks and re-screenshot before you say it's done.
